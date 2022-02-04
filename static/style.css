@@ -6,8 +6,8 @@ body {
 
 /* Font */
 
-h2 {
-    font-size: 3.5rem;
+h1 {
+    font-size: 4rem;
 }
 
 h2 {
@@ -25,9 +25,14 @@ h3 {
     color: azure;
 }
 
-p {
-    font-size: 0.5rem;
+h4 {
+    font-size: 1.5rem;
     font-family: 'Shadows Into Light', cursive;
+    color: rgb(24, 80, 80);
+}
+
+p {
+    font-size: 1rem;
     color: black;
 }
 
@@ -101,6 +106,12 @@ p {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
     margin-bottom: 20px;
+}
+
+/* drnks pages */
+
+.page-content{
+    padding-top: 50px;
 }
 
 /* footer */

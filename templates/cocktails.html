@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Cocktails</title>
+</head>
+<body>
+    {% for cocktail in cocktails %}
+        {{ cocktail.cocktail_category }}<br>
+        {{ cocktail.cocktail_name }}<br>
+        {{ cocktail.cocktail_description }}<br>
+        {{ cocktail.cocktail_strength }}<br>
+    {% endfor %}
+</body>
+</html>

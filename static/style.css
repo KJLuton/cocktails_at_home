@@ -6,9 +6,39 @@ body {
 
 /* Font */
 
-h1 {
+h2 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h1, h2, .nav-link, a {
     font-family: 'Fjalla One', sans-serif;
     color: azure;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-family: 'Shadows Into Light', cursive;
+    color: azure;
+}
+
+p {
+    font-size: 0.5rem;
+    font-family: 'Shadows Into Light', cursive;
+    color: black;
+}
+
+.welcome-text {
+    padding: 200px 0 150px;
+    color: white;
+    text-align: center;
+}
+
+.page-header-text {
+    text-align: center;
 }
 
 
@@ -43,15 +73,15 @@ h1 {
     background-blend-mode: overlay;
 }
 
-.welcome-text {
-    padding: 200px 0 150px;
-    color: white;
-    text-align: center;
-}
-
 .page-header-bar {
     background-color: #40b3b9;
     height: 20px;
+}
+
+.pages-header-container {
+    background-color: #40b3b9;
+    height: max-content;
+    padding: 20px;
 }
 
 /* drinks categories and cards */

@@ -1,14 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>{{ page_title }}</h2>
+<div class="container-fluid pages-header-container">
+    <h2 class="page-header-text">{{ page_title }}</h2>
+</div>
+<div class="row">
 
-    {% for cocktail in cocktails %}
-        {{ cocktail.cocktail_category }}<br>
-        {{ cocktail.cocktail_name }}<br>
-        {{ cocktail.cocktail_description }}<br>
-        {{ cocktail.cocktail_strength }}<br>
-<hr>
-    {% endfor %}
+    <div class="col-md-10">
+
+        {% for cocktail in cocktails %}
+            {{ cocktail.cocktail_category }}<br>
+            {{ cocktail.cocktail_name }}<br>
+            {{ cocktail.cocktail_description }}<br>
+            {{ cocktail.cocktail_strength }}<br>
+        <hr>
+        {% endfor %}
+
+    </div>
+
+</div>
 
 {% endblock %}

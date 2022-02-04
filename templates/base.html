@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}" type="text/css">
     <title>Cocktails&#x40;Home</title>
 </head>
@@ -18,7 +19,7 @@
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('index') }}">Cocktails&#x40;Home</a>
+            <a class="navbar-brand" href="{{ url_for('index') }}">COCKTAILS&#x40;HOME</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -42,7 +43,6 @@
         </div>
     </nav>
     <!-- ./Nav Bar -->
-    <div class="container-fluid page-header-bar"></div>
 
     {% block content %}
     {% endblock %}

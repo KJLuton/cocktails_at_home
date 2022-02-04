@@ -18,10 +18,19 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_cocktails")
-def get_cocktails():
+def index():
+    return render_template("index.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/all_cocktails")
+def all_cocktails():
     cocktails = mongo.db.cocktails.find()
-    return render_template("cocktails.html", cocktails=cocktails)
+    return render_template("all_cocktails.html", cocktails=cocktails)
 
 
 if __name__ == "__main__":

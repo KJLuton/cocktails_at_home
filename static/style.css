@@ -1,5 +1,5 @@
 body {
-    font:200;
+    font: 200;
     background-color: #f5faff;
     height: 100vh;
 }
@@ -18,7 +18,7 @@ h1 {
     padding: 0.5rem 1rem;
     color: #1e2424;
     text-decoration: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
 .navbar-brand {
@@ -43,7 +43,7 @@ h1 {
     background-blend-mode: overlay;
 }
 
-.welcome-text{
+.welcome-text {
     padding: 200px 0 150px;
     color: white;
     text-align: center;
@@ -54,3 +54,14 @@ h1 {
     height: 20px;
 }
 
+/* Footer */
+
+.copyright {
+    font-size: 14px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.fixed-bottom {
+    margin: 20px;
+}

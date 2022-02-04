@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h1>Cocktails&#x40;Home</h1>
-<h2>When you can't go to the bar,</h2>
-<h2>bring the bar to you...</h2>
-<br>
-
-    {% for cocktail in cocktails %}
-        {{ cocktail.cocktail_category }}<br>
-        {{ cocktail.cocktail_name }}<br>
-        {{ cocktail.cocktail_description }}<br>
-        {{ cocktail.cocktail_strength }}<br>
-    {% endfor %}
-
+<!-- Hero Image container -->
+<header class="welcome-container" style="background-image: url('/workspace/milestone_project_3/static/images/m-s-meeuwesen-QYWYnzvPTAQ-unsplash.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Cocktails&#x40;Home</h1>
+                    <span class="subheading">When you can't go to the bar, bring the bar to you...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ./Hero Image container -->
 {% endblock %}

@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Based Cocktails</h2>
+<h2>{{ page_title }}</h2>
 
     {% for cocktail in cocktails %}
         {{ cocktail.cocktail_category }}<br>
         {{ cocktail.cocktail_name }}<br>
         {{ cocktail.cocktail_description }}<br>
         {{ cocktail.cocktail_strength }}<br>
-        <hr>
+<hr>
     {% endfor %}
 
 {% endblock %}

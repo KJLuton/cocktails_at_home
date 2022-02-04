@@ -24,13 +24,13 @@ def index():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", page_title="About C@H")
 
 
 @app.route("/all_cocktails")
 def all_cocktails():
     cocktails = mongo.db.cocktails.find()
-    return render_template("all_cocktails.html", cocktails=cocktails)
+    return render_template("all_cocktails.html", cocktails=cocktails, page_title="All Cocktails")
 
 
 if __name__ == "__main__":

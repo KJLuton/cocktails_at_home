@@ -46,7 +46,6 @@ p {
     text-align: center;
 }
 
-
 /* Nav Bar */
 .nav-link {
     display: block;
@@ -70,12 +69,17 @@ p {
 /* Homepage */
 
 .welcome-container {
-    background: no-repeat center center;
-    background-color: #364658;
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: #fff;
+    background-image: url(../static/images/m-s-meeuwesen-QYWYnzvPTAQ-unsplash.jpg);
+    background-repeat: no-repeat;
     background-attachment: scroll;
-    position: relative;
-    background-size: cover;
+    background-position: center center;
+    background-color: #364658;
     background-blend-mode: overlay;
+    background-size: cover;
 }
 
 .page-header-bar {

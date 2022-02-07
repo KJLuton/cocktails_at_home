@@ -11,7 +11,7 @@
         <div class="card">
             <h2 class="card-header">REGSITER &#x40; CREATE YOUR BAR</h2>
             <div class="card-body">
-                <form class="row needs-validation" novalidate method="POST" action="{{ url_for('register_mybar') }}">
+                <form class="row needs-validation" method="POST" action="{{ url_for('register_mybar') }}" novalidate>
                     <div class="col-md-6">
                         <label for="firstname" class="form-label">First name</label>
                         <input type="text" class="form-control" name="firstname" id="firstname" required>

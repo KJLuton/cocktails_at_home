@@ -27,10 +27,11 @@ def about():
     return render_template("about.html", page_title="ABOUT C@H")
 
 
-@app.route("/all_cocktails")
-def all_cocktails():
+@app.route("/cocktails")
+def cocktails():
     cocktails = mongo.db.cocktails.find()
-    return render_template("all_cocktails.html", cocktails=cocktails, page_title="ALL COCKTAILS")
+    return render_template("cocktails.html",
+        cocktails=cocktails, page_title="COCKTAILS")
 
 
 if __name__ == "__main__":

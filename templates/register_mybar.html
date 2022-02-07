@@ -9,13 +9,13 @@
 <div class="container-fluid">
     <!-- flash messages -->
     {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-            <div class="row flashes">
-                <h5>{{ message }}</h5>
-            </div>
-            {% endfor %}
-        {% endif %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row flashes">
+        <h5>{{ message }}</h5>
+    </div>
+    {% endfor %}
+    {% endif %}
     {% endwith %}
 </div>
 
@@ -51,9 +51,10 @@
                     </div>
                     <div class="col-md-12">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" 
-                        name="password" id="password" pattern="^[a-zA-Z0-9]{8,15}$" minlength="8" maxlength="15" required>
-                        <div id="password" class="form-text">Please create a password that is 8-15 characters long.</div>
+                        <input type="password" class="form-control" name="password" id="password"
+                            pattern="^[a-zA-Z0-9]{8,15}$" minlength="8" maxlength="15" required>
+                        <div id="password" class="form-text">Please create a password that is 8-15 characters long.
+                        </div>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -77,6 +78,13 @@
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row page-content">
+        <div class="col-md-3"></div>
+        <div class="col-lg-6 text-center">
+            <p>Already got an account? <a href="/login_mybar" class="login-links">Log in here</a></p>
         </div>
         <div class="col-md-3"></div>
     </div>

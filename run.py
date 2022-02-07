@@ -47,6 +47,8 @@ def register_mybar():
             return redirect(url_for("register_mybar"))
 
         register_mybar = {
+            "firstname": request.form.get("firstname"),
+            "lastname": request.form.get("lastname"),
             "emailaddress": request.form.get("emailaddress"),
             "password": generate_password_hash(request.form.get("password"))
         }

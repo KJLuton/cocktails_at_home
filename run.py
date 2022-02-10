@@ -35,12 +35,12 @@ def cocktails():
     cocktails=cocktails, page_title="COCKTAILS")
 
 
-#cocktail_ingredients = ingredients.split(", ")
-   # return render_template("cocktails.html", cocktail_ingredients=cocktail_ingredients)
+# cocktail_ingredients = ingredients.split(", ")
+# # return render_template("cocktails.html", cocktail_ingredients=cocktail_ingredients)
 
 
-#@app.route("/cocktails/<cocktail_category>")
-#def liquer_type(cocktail_category):
+# @app.route("/cocktails/<cocktail_category>")
+# def liquer_type(cocktail_category):
 #    liquer_type = mongo.db.cocktails.find(cocktail_category)
 #    for cat in liquer_type:
 #        if cat["url"] == cocktail_category:
@@ -86,10 +86,8 @@ def login_mybar():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("emailaddress")
-                flash("Welcome, {}")
                 return redirect(url_for(
                     "mybar", emailaddress=session["user"]))
-                print(existing_user["firstname"])
             else:
                 # invalid password match
                 flash("Incorrect email address or password provided.\
@@ -107,10 +105,22 @@ def login_mybar():
 
 @app.route("/mybar/<emailaddress>", methods=["GET", "POST"])
 def mybar(emailaddress):
-    # Grab the session users first name from the database 
-    emailaddress = mongo.db.users.find_one(
-        {"emailaddress": session["user"]})["emailaddress"]
-    return render_template("mybar.html", emailaddress=emailaddress)
+        # Grab the session users first name from the database 
+        emailaddress = mongo.db.users.find_one(
+            {"emailaddress": session["user"]})["emailaddress"]
+        
+        if session["user"]:
+            return render_template("mybar.html", emailaddress=emailaddress)
+        
+        return redirect(url_for("login_mybar"))
+
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookies 
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login_mybar"))
 
 
 if __name__ == "__main__":

@@ -103,6 +103,11 @@ def login_mybar():
     return render_template("login_mybar.html", page_title="MY BAR LOG IN")
 
 
+@app.route("/mybar/<firstname>.html", methods=["GET", "POST"])
+def mybarprofile(firstname):
+    return render_template("mybar.html", page_title="MY BAR")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

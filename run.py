@@ -34,23 +34,18 @@ def cocktails():
     return render_template("cocktails.html",
     cocktails=cocktails, page_title="COCKTAILS")
 
+
 #cocktail_ingredients = ingredients.split(", ")
    # return render_template("cocktails.html", cocktail_ingredients=cocktail_ingredients)
 
-@app.route("/gin.html")
-def gin():
-    cocktails = mongo.db.cocktails.find()
-    return render_template("gin.html", cocktails=cocktails, page_title="GIN BASED DRINKS")
 
-
-@app.route("/vodka.html")
-def vodka():
-    return render_template("vodka.html", page_title="VODKA BASED DRINKS")
-
-
-@app.route("/rye.html")
-def rye():
-    return render_template("rye.html", page_title="RYE BASED DRINKS")
+#@app.route("/cocktails/<cocktail_category>")
+#def liquer_type(cocktail_category):
+#    liquer_type = mongo.db.cocktails.find(cocktail_category)
+#    for cat in liquer_type:
+#        if cat["url"] == cocktail_category:
+#            cocktail_category = cat
+#    return render_template("liquer_type.html", liquer_type=cocktail_category)
 
 
 @app.route("/register_mybar", methods=["GET", "POST"])
@@ -85,13 +80,13 @@ def login_mybar():
         # check if email address matches user in DB
         existing_user = mongo.db.users.find_one(
             {"emailaddress": request.form.get("emailaddress")})
-
         if existing_user: 
             # ensure hashed password matches record in db
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("emailaddress")
-                flash("Welcome, {}".format(request.form.get("firstname")))
+                flash("Welcome, {}")
+                print(existing_user["firstname"])
             else:
                 # invalid password match
                 flash("Incorrect email address or password provided.\

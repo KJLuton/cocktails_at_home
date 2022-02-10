@@ -70,17 +70,19 @@ def login_mybar():
         if existing_user: 
             # ensure hashed password matches record in db
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("emailaddress")
-                    flash("Welcome, {}".format(request.form.get("firstname")))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("emailaddress")
+                flash("Welcome, {}".format(request.form.get("firstname")))
             else:
                 # invalid password match
-                flash("Incorrect email address or password provided. Please try again.")
+                flash("Incorrect email address or password provided.\
+                    Please try again.")
                 return redirect(url_for("login_mybar"))
 
         else:
             # email address doesn't exist
-            flash("Incorrect email address or password provided. Please try again.")
+            flash("Incorrect email address or password provided.\
+                Please try again.")
             return redirect(url_for("login_mybar"))
             
     return render_template("login_mybar.html", page_title="MY BAR LOG IN")

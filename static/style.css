@@ -14,21 +14,27 @@ h2 {
     font-size: 2.5rem;
 }
 
-h1, h2, h5, .nav-link, a {
+h1, h2, .nav-link, a {
     font-family: 'Fjalla One', sans-serif;
     color: #f2f2f2;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: 'Shadows Into Light', cursive;
-    color: #f2f2f2;
+    color: rgb(24, 80, 80);;
 }
 
 h4 {
     font-size: 1.5rem;
     font-family: 'Shadows Into Light', cursive;
-    color: rgb(24, 80, 80);
+    color: #f2f2f2;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-family: 'Fjalla One', sans-serif;
+    color: rgb(24, 80, 80);;
 }
 
 p {
@@ -135,6 +141,15 @@ p {
 /* drnks pages */
 
 .page-content{
+    padding: 30px;
+}
+
+.ingredients{
+    background-color: #00494d;
+    padding: 10px;
+}
+
+.cocktail-container{
     padding-top: 20px;
 }
 

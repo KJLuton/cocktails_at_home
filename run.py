@@ -60,34 +60,6 @@ def register_mybar():
     return render_template("register_mybar.html", page_title="REGISTER")
 
 
-@app.route("/login_mybar", methods=["GET", "POST"])
-def login_mybar():
-    if request.method == "POST":
-        # check if email address matches user in DB
-        existing_user = mongo.db.users.find_one(
-            {"emailaddress": request.form.get("emailaddress")})
-
-        if existing_user: 
-            # ensure hashed password matches record in db
-            if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("emailaddress")
-                flash("Welcome, {}".format(request.form.get("firstname")))
-            else:
-                # invalid password match
-                flash("Incorrect email address or password provided.\
-                    Please try again.")
-                return redirect(url_for("login_mybar"))
-
-        else:
-            # email address doesn't exist
-            flash("Incorrect email address or password provided.\
-                Please try again.")
-            return redirect(url_for("login_mybar"))
-            
-    return render_template("login_mybar.html", page_title="MY BAR LOG IN")
-
-
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

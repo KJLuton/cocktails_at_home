@@ -270,6 +270,10 @@ Hero: Photo by <a href="https://unsplash.com/@meeuwesen?utm_source=unsplash&utm_
 Gin: 
 Photo by <a href="https://unsplash.com/@soulvanschaik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Soul van Schaik</a> on <a href="https://unsplash.com/s/photos/gin-drinks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
+Vodka: 
+Photo by <a href="https://unsplash.com/@liz_weddon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Liz Weddon</a> on <a href="https://unsplash.com/s/photos/vodka-drink?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
 
 #### README.md File Assistance
 

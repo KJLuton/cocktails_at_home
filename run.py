@@ -34,10 +34,13 @@ def cocktails():
     return render_template("cocktails.html",
     cocktails=cocktails, page_title="COCKTAILS")
 
+#cocktail_ingredients = ingredients.split(", ")
+   # return render_template("cocktails.html", cocktail_ingredients=cocktail_ingredients)
 
 @app.route("/gin.html")
 def gin():
-    return render_template("gin.html", page_title="GIN BASED DRINKS")
+    cocktails = mongo.db.cocktails.find()
+    return render_template("gin.html", cocktails=cocktails, page_title="GIN BASED DRINKS")
 
 
 @app.route("/vodka.html")
@@ -72,6 +75,7 @@ def register_mybar():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("emailaddress")
         flash("Regsitration Successful!")
+
     return render_template("register_mybar.html", page_title="REGISTER")
 
 
@@ -101,11 +105,6 @@ def login_mybar():
             return redirect(url_for("login_mybar"))
 
     return render_template("login_mybar.html", page_title="MY BAR LOG IN")
-
-
-@app.route("/mybar/<firstname>.html", methods=["GET", "POST"])
-def mybarprofile(firstname):
-    return render_template("mybar.html", page_title="MY BAR")
 
 
 if __name__ == "__main__":

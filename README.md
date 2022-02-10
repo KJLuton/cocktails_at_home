@@ -46,28 +46,26 @@ The website owner is the company, Cocktails@Home. The goal of the website is to 
 
 ## User stories
 
-User 1:
+User 1: Katie is 20, lives in london and loves cocktails. She tends to only like sweet cocktails but wants to find and try other other cocktails. As cocktails are expensive in London, she wants to find cheaper ways to make them from home. 
 
-
-User 2:
-
-
-User 3:
- 
+User 2: Peter is 40 and wants to have some friends over for a cocktail party. He has his favourites but wants to find some that all his guests might like. 
 
 ## Wireframes
 
 ### Homepage - Wireframe
-![Homepage-Wireframe]()
+![Homepage-Wireframe](static/images/wireframes/cat_homepage.png)
 
-### Join Us Page - Wireframe
-![All-Cocktails-Wireframe]()
+### Cocktails Page - Wireframe
+![All-Cocktails-Wireframe](static/images/wireframes/cat_cocktail.png)
 
-### Members Page - Wireframe
-![Log-in-Wireframe]()
+### Login Page - Wireframe
+![Log-in-Wireframe](static/images/wireframes/cat_login.png)
 
-### Contact Us Page - Wireframe
-![Register-Wireframe]()
+### Register Page - Wireframe
+![Register-Wireframe](static/images/wireframes/cat_register.png)
+
+### My Bar Page - Wireframe
+![Register-Wireframe](static/images/wireframes/cat_mybar.png)
 
 ## Surface
 
@@ -102,10 +100,6 @@ I used images from [Unsplash.com](https://unsplash.com/). I have credited these 
 
 _______
 # Features
-
-The website consists of 3 pages. All are accessible from the navigation menu. 
-
-The website has the below features: 
 
 ## Existing Features
 
@@ -217,11 +211,6 @@ User 2:
 <i>Peter</i>
 
 * Visiting the website as Peter
-
-User 3:
-<i>Anne is a female in her late 30s.</i>
-
-* Visiting the website as Anne
 
 ### Code Validation
 

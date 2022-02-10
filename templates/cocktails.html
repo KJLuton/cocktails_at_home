@@ -16,6 +16,9 @@
         <p>Base Liquer: {{ cocktail.cocktail_category }}</p>
         <p>Strength: {{ cocktail.cocktail_strength }}</p>
 
+            {% for ingredient in cocktail_ingredients %}
+            <p>{ ingredient }<p>
+            {% endfor %}
         <hr>
         
         {% endfor %}

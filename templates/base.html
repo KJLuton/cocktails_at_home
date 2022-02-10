@@ -41,6 +41,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('login_mybar') }}">Log in to My Bar</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('mybar', emailaddress=session['user']) }}">My Bar</a>
+                    </li>
                 </ul>
             </div>
         </div>

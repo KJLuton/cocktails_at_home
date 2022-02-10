@@ -47,7 +47,7 @@ def cocktails():
 #            cocktail_category = cat
 #    return render_template("liquer_type.html", liquer_type=cocktail_category)
 
-
+# create new bar / registration
 @app.route("/register_mybar", methods=["GET", "POST"])
 def register_mybar():
     if request.method == "POST":
@@ -70,6 +70,7 @@ def register_mybar():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("emailaddress")
         flash("Regsitration Successful!")
+        return redirect(url_for("mybar", emailaddress=session["user"]))
 
     return render_template("register_mybar.html", page_title="REGISTER")
 
@@ -86,6 +87,8 @@ def login_mybar():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("emailaddress")
                 flash("Welcome, {}")
+                return redirect(url_for(
+                    "mybar", emailaddress=session["user"]))
                 print(existing_user["firstname"])
             else:
                 # invalid password match
@@ -100,6 +103,14 @@ def login_mybar():
             return redirect(url_for("login_mybar"))
 
     return render_template("login_mybar.html", page_title="MY BAR LOG IN")
+
+
+@app.route("/mybar/<emailaddress>", methods=["GET", "POST"])
+def mybar(emailaddress):
+    # Grab the session users first name from the database 
+    emailaddress = mongo.db.users.find_one(
+        {"emailaddress": session["user"]})["emailaddress"]
+    return render_template("mybar.html", emailaddress=emailaddress)
 
 
 if __name__ == "__main__":

@@ -35,6 +35,21 @@ def cocktails():
     cocktails=cocktails, page_title="COCKTAILS")
 
 
+@app.route("/gin.html")
+def gin():
+    return render_template("gin.html", page_title="GIN BASED DRINKS")
+
+
+@app.route("/vodka.html")
+def vodka():
+    return render_template("vodka.html", page_title="VODKA BASED DRINKS")
+
+
+@app.route("/rye.html")
+def rye():
+    return render_template("rye.html", page_title="RYE BASED DRINKS")
+
+
 @app.route("/register_mybar", methods=["GET", "POST"])
 def register_mybar():
     if request.method == "POST":
@@ -58,6 +73,34 @@ def register_mybar():
         session["user"] = request.form.get("emailaddress")
         flash("Regsitration Successful!")
     return render_template("register_mybar.html", page_title="REGISTER")
+
+
+@app.route("/login_mybar", methods=["GET", "POST"])
+def login_mybar():
+    if request.method == "POST":
+        # check if email address matches user in DB
+        existing_user = mongo.db.users.find_one(
+            {"emailaddress": request.form.get("emailaddress")})
+
+        if existing_user: 
+            # ensure hashed password matches record in db
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("emailaddress")
+                flash("Welcome, {}".format(request.form.get("firstname")))
+            else:
+                # invalid password match
+                flash("Incorrect email address or password provided.\
+                    Please try again.")
+                return redirect(url_for("login_mybar"))
+
+        else:
+            # email address doesn't exist
+            flash("Incorrect email address or password provided.\
+                Please try again.")
+            return redirect(url_for("login_mybar"))
+
+    return render_template("login_mybar.html", page_title="MY BAR LOG IN")
 
 
 if __name__ == "__main__":

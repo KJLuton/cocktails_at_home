@@ -46,6 +46,13 @@ p {
     text-align: center;
 }
 
+.liquer-card-title {
+    margin-bottom: 0.5rem;
+    font-family: 'Fjalla One', sans-serif;
+    color: #f2f2f2;
+    font-size: inherit;
+}
+
 .login-links{
     color: #40b3b9;
     font-family: 'Shadows Into Light';

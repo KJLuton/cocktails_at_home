@@ -9,23 +9,38 @@
 
 <div class="cocktail-container container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-1"></div>
+        <div class="col-10 cocktail_details">
+            <div class="row">
+                <div class="col-md-6">
 
-            <h3>{{ cocktail.cocktail_name }}</h3><br>
-            <p>{{ cocktail.cocktail_description }}</p>
-            <p><strong>Liquer: </strong>{{ cocktail.cocktail_category }}</p>
-            <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
-            <hr>
-            <h4 class="ingredients">Ingredients:</h4><br>
-            
-                {% for ingredients in cocktail.cocktail_ingredients %}
-                <p>{{ loop.index }}. {{ ingredients }}</p>
-                {% endfor %}
-        </div>
-        <div class="col-md-6">
-        <img src="{{ cocktail.image_url }}" class="cocktail_image" alt="{{ cocktail.cocktail_name }} image">
-        </div>
+                    <h3>{{ cocktail.cocktail_name }}</h3><br>
+                    <p>{{ cocktail.cocktail_description }}</p>
+                    <p><strong>Liquer: </strong>
+                        {% for liquer in cocktail.cocktail_category %}
+                        <p>{{ liquer }}</p>
+                        {% endfor %}
+                    <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ cocktail.image_url }}" class="cocktail_image" alt="{{ cocktail.cocktail_name }} image">
+                </div>
+            </div>
+            <div class="row ingredients_row">
+                <div class="col-md-6">
+                    <h4 class="ingredients">Ingredients:</h4><br>
 
+                    {% for ingredients in cocktail.cocktail_ingredients %}
+                    <p>{{ loop.index }}. {{ ingredients }}</p>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Liquer: </strong>{{ cocktail.cocktail_category }}</p>
+                    <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
     </div>
 </div>
 <hr>

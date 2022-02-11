@@ -123,6 +123,12 @@ def logout():
     return redirect(url_for("login_mybar"))
 
 
+@app.route("/add_cocktail")
+def add_cocktail():
+    # add new cocktail recipe to mongodb 
+    return render_template("add_cocktail.html", page_title="ADD A NEW COCKTAIL")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

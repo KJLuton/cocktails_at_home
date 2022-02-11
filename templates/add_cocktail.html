@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid pages-header-container">
+    <h2 class="page-header-text">{{ page_title }}</h2>
+</div>
+
+<div class="row page-content">
+    <div class="col-md-3"></div>
+    <div class="col-lg-6">
+        <div class="card">
+            <h2 class="card-header">ADD NEW COCKTAIL</h2>
+            <div class="card-body">
+                <form class="row needs-validation" method="POST" action="" novalidate>
+                    <div class="col-md-12">
+                        <label for="cocktail_name" class="form-label">Cocktail Name: </label>
+                        <input type="text" class="form-control" name="cocktail_name" id="cocktail_name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Cocktail Category: </label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Gin</option>
+                          <option>Vodka</option>
+                          <option>Whiskey/Rye</option>
+                          <option>Champagne</option>
+                          <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="cocktail_description" class="form-label">Cocktail description: </label>
+                        <textarea class="form-control" name="cocktail_description" id="cocktail_description" rows="3" required></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Cocktail strength: </label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="cocktail_description" class="form-label">Cocktail Ingredients: </label>
+                        <textarea class="form-control" name="cocktail_description" id="cocktail_description" rows="3" required></textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">SUBMIT FORM</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+{% endblock %}

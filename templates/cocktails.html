@@ -29,7 +29,9 @@
                         <p>{{ cocktail.cocktail_description }}</p>
                         <p><strong>Liquer: </strong>
                             {% for liquer in cocktail.cocktail_category %}
-                            <p>{{ liquer }}</p>
+                            <ul>
+                                <li>{{ liquer }}</li>
+                            </ul>
                             {% endfor %}
                             <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
                     </div>
@@ -43,13 +45,17 @@
                         <h4 class="ingredients">Ingredients:</h4><br>
 
                         {% for ingredients in cocktail.cocktail_ingredients %}
-                        <p>{{ loop.index }}. {{ ingredients }}</p>
+                        <p><strong>{{ loop.index }}.</strong> {{ ingredients }}</p>
+                        
                         {% endfor %}
                     </div>
                     <div class="col-md-6">
                         <p><strong>Liquer: </strong>{{ cocktail.cocktail_category }}</p>
                         <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
-                        <p>added by: {{ cocktail.created_by }}</p>
+                        <p>Added by: {{ cocktail.created_by }}</p>
+                        {% if session.user %}
+                        <a href="" class="btn-small">Edit</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

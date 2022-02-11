@@ -35,6 +35,14 @@ def cocktails():
         "cocktails.html", cocktails=cocktails, page_title="COCKTAILS")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    search = request.form.get("search")
+    cocktails = mongo.db.cocktails.find({"$text": {"$search": search}})
+    return render_template(
+        "cocktails.html", cocktails=cocktails)
+
+
 # create new bar / registration
 @app.route("/register_mybar", methods=["GET", "POST"])
 def register_mybar():

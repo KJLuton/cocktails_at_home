@@ -19,7 +19,7 @@
             <h4 class="ingredients">Ingredients:</h4><br>
             
                 {% for ingredients in cocktail.cocktail_ingredients %}
-                    <p>{{ ingredients }}</p>
+                <p>{{ loop.index }}. {{ ingredients }}</p>
                 {% endfor %}
         </div>
         <div class="col-md-6">

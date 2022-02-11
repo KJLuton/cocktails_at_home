@@ -268,6 +268,16 @@ Photo by <a href="https://unsplash.com/@tchompalov?utm_source=unsplash&utm_mediu
 
 Whiskey category: 
 Photo by <a href="https://unsplash.com/@nuff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nuff .</a> on <a href="https://unsplash.com/s/photos/whiskey-cocktail?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Cosmopolitan: 
+Photo by <a href="https://unsplash.com/@kikesalazarn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kike Salazar N</a> on <a href="https://unsplash.com/s/photos/cosmopolitan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+The French 75: 
+Photo by <a href="https://unsplash.com/@alexasoh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexa Soh</a> on <a href="https://unsplash.com/s/photos/french-75?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Long Island Iced Tea: 
+Photo by <a href="https://unsplash.com/@swivelproject?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Elissa Landry</a> on <a href="https://unsplash.com/s/photos/long-island-iced-tea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
   
 
 #### README.md File Assistance

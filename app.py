@@ -130,6 +130,7 @@ def add_cocktail():
                 "cocktail_strength": request.form.get("cocktail_strength"),
                 "cocktail_category": request.form.getlist("cocktail_category"),
                 "cocktail_ingredients": request.form.getlist("cocktail_ingredients"),
+                "image_url": request.form.get("image_url"),
                 "created_by": session["user"]
             }
             mongo.db.cocktails.insert_one(cocktail)
@@ -146,9 +147,21 @@ def add_cocktail():
 
 @app.route("/edit_cocktail/<cocktail_id>", methods=["GET", "POST"])
 def edit_cocktail(cocktail_id):
+    if request.method == "POST":
+        submit = {
+            "cocktail_name": request.form.get("cocktail_name"),
+            "cocktail_description": request.form.get("cocktail_description"),
+            "cocktail_strength": request.form.get("cocktail_strength"),
+            "cocktail_category": request.form.get("cocktail_category"),
+            "cocktail_ingredients": request.form.get("cocktail_ingredients"),
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.cocktails.update({"_id": ObjectId(cocktail_id)}, submit)
+        flash("Cocktail Updated")
+
     cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})
-    return render_template(
-        "edit_cocktail.html", cocktail=cocktail)
+    return render_template("edit_cocktail.html", cocktail=cocktail)
 
 
 if __name__ == "__main__":

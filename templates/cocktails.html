@@ -54,7 +54,7 @@
                         <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
                         <p>Added by: {{ cocktail.created_by }}</p>
                         {% if session.user %}
-                        <a href="" class="btn-small">Edit</a>
+                        <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}" class="btn-small">Edit</a>
                         {% endif %}
                     </div>
                 </div>

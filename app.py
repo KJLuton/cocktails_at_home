@@ -144,6 +144,13 @@ def add_cocktail():
         "add_cocktail.html", page_title="ADD A NEW COCKTAIL")
 
 
+@app.route("/edit_cocktail/<cocktail_id>", methods=["GET", "POST"])
+def edit_cocktail(cocktail_id):
+    cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})
+    return render_template(
+        "edit_cocktail.html", cocktail=cocktail)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

@@ -5,24 +5,26 @@
     <h2 class="page-header-text">{{ page_title }}</h2>
 </div>
 
-<div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-        <form class="form-inline" action="{{ url_for('search') }}" method="POST">
-            <input class="form-control mr-sm-2" type="search" name="search" min-length="3" placeholder="Search" aria-label="Search" validate>
-            <label for="search" class="form-label">Search</label>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+<div class="container-fluid search-bar">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form class="form-inline" action="{{ url_for('search') }}" method="POST">
+                <input class="form-control mr-sm-2" type="search" name="search" min-length="3"
+                    placeholder="Search for a cocktail or liquer type here" aria-label="Search" validate>
+                <button class="btn search-button my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
     </div>
-    <div class="col-2"></div>
 </div>
 
 {% for cocktail in cocktails %}
 
 <div class="cocktail-container container">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 cocktail_details">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 cocktail_details">
             <div class="row">
                 <div class="col-md-6">
 
@@ -52,7 +54,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-1"></div>
+        <div class="col-md-1">
+        </div>
     </div>
 </div>
 <hr>

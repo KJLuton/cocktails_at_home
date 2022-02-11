@@ -110,6 +110,15 @@ p {
     background-size: cover;
 }
 
+.search-bar{
+    padding-top: 30px;
+}
+
+.search-button{
+    background-color: #40b3b9;
+    color: white;
+}
+
 .page-header-bar {
     background-color: #40b3b9;
     height: 20px;
@@ -167,14 +176,13 @@ p {
 }
 
 .ingredients_row{
-    background-color: #00494d52;
+    background-color: #95d4d7;
     margin-top: 20px;
     padding-top: 10px;
 }
 
 .cocktail_details{
     background-color: #e5e5e5;
-    margin: 20px;
     padding: 20px;
 }
 

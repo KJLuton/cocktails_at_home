@@ -6,7 +6,17 @@
     <div class="container">
         <h1>COCKTAILS &#x40; HOME</h1>
         <h4>When you can't go to the bar, bring the bar to you...</h4>
-        <!--<a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a> -->
+        <div class="row search-bar">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form class="form-inline" action="{{ url_for('search') }}" method="POST">
+                    <input class="form-control mr-sm-2" type="search" name="search" min-length="3"
+                        placeholder="Search for drink" aria-label="Search" validate>
+                    <button class="btn search-button my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
     </div>
 </header>
 <div class="container-fluid page-header-bar"></div>

@@ -219,6 +219,13 @@ p {
     font-family: 'Fjalla One', sans-serif;
 }
 
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    margin-top: 15px;
+}
+
 /* footer */
 
 .copyright {

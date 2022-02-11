@@ -27,13 +27,8 @@
 
                         <h3>{{ cocktail.cocktail_name }}</h3><br>
                         <p>{{ cocktail.cocktail_description }}</p>
-                        <p><strong>Liquer: </strong>
-                            {% for liquer in cocktail.cocktail_category %}
-                            <ul>
-                                <li>{{ liquer }}</li>
-                            </ul>
-                            {% endfor %}
-                            <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
+                        <p><strong>Liquer: </strong>{{ cocktail.cocktail_category }}</p>
+                        <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
                     </div>
                     <div class="col-md-6">
                         <img src="{{ cocktail.image_url }}" class="cocktail_image"

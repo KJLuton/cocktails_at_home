@@ -7,59 +7,51 @@
         <div class="card">
             <h2 class="card-header">EDIT COCKTAIL</h2>
             <div class="card-body">
-                <form class="row needs-validation" method="POST" action="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}" novalidate>
+                <form class="row needs-validation" method="POST"
+                    action="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}" novalidate>
                     <div class="col-md-12">
                         <label for="cocktail_name" class="form-label">Cocktail Name: </label>
-                        <input type="text" class="form-control" name="cocktail_name" id="cocktail_name" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                        <input type="text" class="form-control" name="cocktail_name" id="cocktail_name"
+                            value="{{ cocktail.cocktail_name }}" required>
                     </div>
                     <div class="col-md-12 form-group">
-                        <label for="cocktail_category">Cocktail Category: </label>
+                        <label for="cocktail_category">Main Cocktail Category: </label>
                         <select class="form-control" name="cocktail_category" id="cocktail_category" required>
+                            <option value="{{ cocktail.cocktail_category }}" selected>{{ cocktail.cocktail_category }}</option>
                             <option>Gin</option>
                             <option>Vodka</option>
                             <option>Whiskey/Rye</option>
                             <option>Champagne</option>
                             <option>Other</option>
                         </select>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
                     <div class="col-md-12 form-group">
                         <label for="cocktail_description" class="form-label">Cocktail description: </label>
                         <textarea class="form-control" name="cocktail_description" id="cocktail_description" rows="3"
-                            required></textarea>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                            required>{{ cocktail.cocktail_description }}</textarea>
                     </div>
                     <div class="col-md-12 form-group">
                         <label for="cocktail_strength">Cocktail strength: </label>
-                        <select class="form-control" name="cocktail_strength" id="cocktail_strength" required>
+                        <select class="form-control" name="cocktail_strength" id="cocktail_strength"
+                            value="{{ cocktail.cocktail_strength }}" required>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
                         </select>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
                     <div class="col-md-12 form-group">
                         <label for="cocktail_ingredients" class="form-label">Cocktail Ingredients: </label>
                         <textarea class="form-control" name="cocktail_ingredients" id="cocktail_ingredients" rows="3"
-                            required></textarea>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                            required>{{ cocktail.cocktail_ingredients }}</textarea>
                     </div>
+                    <!-- confirm edit button -->
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">EDIT COCKTAIL</button>
-                    </div>
+                        <button class="btn btn-primary" type="submit">Confirm Edit Cocktail</button>
+                    <!-- cancel button -->
+                    <a href="{{ url_for('cocktails') }}" class="btn btn-secondary">Cancel</a>
+                </div>
                 </form>
             </div>
         </div>

@@ -71,7 +71,7 @@ p {
     text-align: center;
     background-color: #364658;
     color: #f2f2f2;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* Nav Bar */
@@ -127,7 +127,6 @@ p {
 .pages-header-container {
     background-color: #40b3b9;
     height: max-content;
-    padding: 20px;
 }
 
 /* drinks categories and cards */

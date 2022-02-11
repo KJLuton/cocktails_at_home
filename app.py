@@ -106,7 +106,7 @@ def mybar(emailaddress):
         {"emailaddress": session["user"]})["emailaddress"]
 
     if session["user"]:
-        return render_template("mybar.html", emailaddress=emailaddress)
+        return render_template("mybar.html", emailaddress=emailaddress, age_title="MY BAR LOG IN")
 
     return redirect(url_for("login_mybar"))
 
@@ -121,19 +121,25 @@ def logout():
 
 @app.route("/add_cocktail", methods=["GET", "POST"])
 def add_cocktail():
-    # add new cocktail recipe to mongodb
-    if request.method == "POST":
-        cocktail = {
-            "cocktail_name": request.form.get("cocktail_name"),
-            "cocktail_description": request.form.get("cocktail_description"),
-            "cocktail_strength": request.form.get("cocktail_strength"),
-            "cocktail_category": request.form.getlist("cocktail_category"),
-            "cocktail_ingredients": request.form.getlist("cocktail_ingredients"),
-            "created_by": session["user"]
-        }
-        mongo.db.cocktails.insert_one(cocktail)
-        flash("Cocktail added")
-        return redirect(url_for("cocktails"))
+    if session["user"]:
+    # if session user exists, show form to add new cocktail to mongodb
+        if request.method == "POST":
+            cocktail = {
+                "cocktail_name": request.form.get("cocktail_name"),
+                "cocktail_description": request.form.get("cocktail_description"),
+                "cocktail_strength": request.form.get("cocktail_strength"),
+                "cocktail_category": request.form.getlist("cocktail_category"),
+                "cocktail_ingredients": request.form.getlist("cocktail_ingredients"),
+                "created_by": session["user"]
+            }
+            mongo.db.cocktails.insert_one(cocktail)
+            flash("Cocktail added")
+            return redirect(url_for("cocktails"))
+    else:
+        # if session user doesn't exist. NEED TO FIX THIS ERROR.
+        return redirect(url_for("register_mybar"))
+        flash("Only registered users can add new cocktails.\
+            Log in or register below to create your bar")
     return render_template(
         "add_cocktail.html", page_title="ADD A NEW COCKTAIL")
 

@@ -140,6 +140,12 @@ p {
     margin-bottom: 20px;
 }
 
+.card-img{
+    width: 100%;
+    object-fit: cover;
+    height: 30vh;
+}
+
 /* drnks pages */
 
 .page-content{

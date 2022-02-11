@@ -254,15 +254,21 @@ The content on the page was from XXXXXX
 
 #### Images: 
 
-Hero: Photo by <a href="https://unsplash.com/@meeuwesen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">M.S. Meeuwesen</a> on <a href="https://unsplash.com/s/photos/cocktail-bar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Homepage Hero Image: 
+Photo by <a href="https://unsplash.com/@meeuwesen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">M.S. Meeuwesen</a> on <a href="https://unsplash.com/s/photos/cocktail-bar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-Gin: 
+Gin Category: 
 Photo by <a href="https://unsplash.com/@soulvanschaik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Soul van Schaik</a> on <a href="https://unsplash.com/s/photos/gin-drinks?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-Vodka: 
+Vodka Category: 
 Photo by <a href="https://unsplash.com/@liz_weddon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Liz Weddon</a> on <a href="https://unsplash.com/s/photos/vodka-drink?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
+Gin and Tonic: 
+Photo by <a href="https://unsplash.com/@tchompalov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vlad Tchompalov</a> on <a href="https://unsplash.com/s/photos/gin-and-tonic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
+Whiskey category: 
+Photo by <a href="https://unsplash.com/@nuff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nuff .</a> on <a href="https://unsplash.com/s/photos/whiskey-cocktail?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 #### README.md File Assistance
 

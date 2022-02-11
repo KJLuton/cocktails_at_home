@@ -32,7 +32,7 @@ def about():
 def cocktails():
     cocktails = mongo.db.cocktails.find()
     return render_template(
-        "cocktails.html", cocktails=cocktails, page_title="COCKTAILS", list_of_numbers=[1, 2, 3])
+        "cocktails.html", cocktails=cocktails, page_title="COCKTAILS")
 
 
 # create new bar / registration

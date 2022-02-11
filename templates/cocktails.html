@@ -15,12 +15,15 @@
             <p>{{ cocktail.cocktail_description }}</p>
             <p><strong>Liquer: </strong>{{ cocktail.cocktail_category }}</p>
             <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
-<hr>
+            <hr>
             <h4 class="ingredients">Ingredients:</h4><br>
-            <p>{{ cocktail.cocktail_ingredients }}</p>
+            
+                {% for ingredients in cocktail.cocktail_ingredients %}
+                    <p>{{ ingredients }}</p>
+                {% endfor %}
         </div>
         <div class="col-md-6">
-        <img src="{{ cocktail.image_url }}" alt="{{ cocktail.cocktail_name }} image">
+        <img src="{{ cocktail.image_url }}" class="cocktail_image" alt="{{ cocktail.cocktail_name }} image">
         </div>
 
     </div>

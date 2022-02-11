@@ -31,21 +31,9 @@ def about():
 @app.route("/cocktails")
 def cocktails():
     cocktails = mongo.db.cocktails.find()
-    return render_template("cocktails.html",
-    cocktails=cocktails, page_title="COCKTAILS")
+    return render_template(
+        "cocktails.html", cocktails=cocktails, page_title="COCKTAILS")
 
-
-# cocktail_ingredients = ingredients.split(", ")
-# # return render_template("cocktails.html", cocktail_ingredients=cocktail_ingredients)
-
-
-# @app.route("/cocktails/<cocktail_category>")
-# def liquer_type(cocktail_category):
-#    liquer_type = mongo.db.cocktails.find(cocktail_category)
-#    for cat in liquer_type:
-#        if cat["url"] == cocktail_category:
-#            cocktail_category = cat
-#    return render_template("liquer_type.html", liquer_type=cocktail_category)
 
 # create new bar / registration
 @app.route("/register_mybar", methods=["GET", "POST"])

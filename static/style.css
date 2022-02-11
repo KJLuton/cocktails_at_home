@@ -153,6 +153,11 @@ p {
     padding-top: 20px;
 }
 
+.cocktail_image{
+    height: 100%;
+    width: 100%;
+}
+
 
 /* register page */
 

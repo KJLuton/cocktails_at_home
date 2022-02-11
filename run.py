@@ -105,14 +105,14 @@ def login_mybar():
 
 @app.route("/mybar/<emailaddress>", methods=["GET", "POST"])
 def mybar(emailaddress):
-        # Grab the session users first name from the database 
-        emailaddress = mongo.db.users.find_one(
-            {"emailaddress": session["user"]})["emailaddress"]
+    # Grab the session users first name from the database 
+    emailaddress = mongo.db.users.find_one(
+        {"emailaddress": session["user"]})["emailaddress"]
+
+    if session["user"]:
+        return render_template("mybar.html", emailaddress=emailaddress)
         
-        if session["user"]:
-            return render_template("mybar.html", emailaddress=emailaddress)
-        
-        return redirect(url_for("login_mybar"))
+    return redirect(url_for("login_mybar"))
 
 
 @app.route("/logout")
@@ -126,7 +126,8 @@ def logout():
 @app.route("/add_cocktail")
 def add_cocktail():
     # add new cocktail recipe to mongodb 
-    return render_template("add_cocktail.html", page_title="ADD A NEW COCKTAIL")
+    return render_template(
+        "add_cocktail.html", page_title="ADD A NEW COCKTAIL")
 
 
 if __name__ == "__main__":

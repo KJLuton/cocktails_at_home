@@ -11,7 +11,7 @@
         <div class="card">
             <h2 class="card-header">ADD NEW COCKTAIL</h2>
             <div class="card-body">
-                <form class="row needs-validation" method="POST" action="" novalidate>
+                <form class="row needs-validation" method="POST" action="{{ url_for('add_cocktail') }}" novalidate>
                     <div class="col-md-12">
                         <label for="cocktail_name" class="form-label">Cocktail Name: </label>
                         <input type="text" class="form-control" name="cocktail_name" id="cocktail_name" required>

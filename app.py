@@ -47,7 +47,7 @@ def search():
 @app.route("/register_mybar", methods=["GET", "POST"])
 def register_mybar():
     if request.method == "POST":
-        # check if username already exists in db 
+        # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"emailaddress": request.form.get("emailaddress")})
 
@@ -77,7 +77,7 @@ def login_mybar():
         # check if email address matches user in DB
         existing_user = mongo.db.users.find_one(
             {"emailaddress": request.form.get("emailaddress")})
-        if existing_user: 
+        if existing_user:
             # ensure hashed password matches record in db
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
@@ -101,27 +101,39 @@ def login_mybar():
 
 @app.route("/mybar/<emailaddress>", methods=["GET", "POST"])
 def mybar(emailaddress):
-    # Grab the session users first name from the database 
+    # Grab the session users first name from the database
     emailaddress = mongo.db.users.find_one(
         {"emailaddress": session["user"]})["emailaddress"]
 
     if session["user"]:
         return render_template("mybar.html", emailaddress=emailaddress)
-        
+
     return redirect(url_for("login_mybar"))
 
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookies 
+    # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login_mybar"))
 
 
-@app.route("/add_cocktail")
+@app.route("/add_cocktail", methods=["GET", "POST"])
 def add_cocktail():
-    # add new cocktail recipe to mongodb 
+    # add new cocktail recipe to mongodb
+    if request.method == "POST":
+        cocktail = {
+            "cocktail_name": request.form.get("cocktail_name"),
+            "cocktail_description": request.form.get("cocktail_description"),
+            "cocktail_strength": request.form.get("cocktail_strength"),
+            "cocktail_category": request.form.getlist("cocktail_category"),
+            "cocktail_ingredients": request.form.getlist("cocktail_ingredients"),
+            "created_by": session["user"]
+        }
+        mongo.db.cocktails.insert_one(cocktail)
+        flash("Cocktail added")
+        return redirect(url_for("cocktails"))
     return render_template(
         "add_cocktail.html", page_title="ADD A NEW COCKTAIL")
 

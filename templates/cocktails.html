@@ -23,48 +23,49 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10 cocktail_details">
                     <div class="row">
-                    <div class="col-md-6">
+                        <div class="col-md-6">
 
-                        <h3>{{ cocktail.cocktail_name }}</h3><br>
-                        <p>{{ cocktail.cocktail_description }}</p>
-                        <p><strong>Liquer(s) needed: </strong></p>
+                            <h3>{{ cocktail.cocktail_name }}</h3><br>
+                            <p>{{ cocktail.cocktail_description }}</p>
+                            <p><strong>Liquer(s) needed: </strong></p>
 
-                        {% for categories in cocktail.cocktail_category %}
+                            {% for categories in cocktail.cocktail_category %}
 
-                        <ul>
-                            <li>{{ categories }}</li>
-                        </ul>
-                        
-                        {% endfor %}
+                            <ul>
+                                <li>{{ categories }}</li>
+                            </ul>
 
+                            {% endfor %}
+
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{{ cocktail.image_url }}" class="cocktail_image"
+                                alt="{{ cocktail.cocktail_name }} image">
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="{{ cocktail.image_url }}" class="cocktail_image"
-                            alt="{{ cocktail.cocktail_name }} image">
+                    <div class="row ingredients_row">
+                        <div class="col-md-6">
+                            <h4 class="ingredients">Ingredients:</h4><br>
+
+                            {% for ingredients in cocktail.cocktail_ingredients %}
+
+                            <p><strong>{{ loop.index }}.</strong> {{ ingredients }}</p>
+
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <p>Added by: {{ cocktail.created_by }}</p>
+                            {% if session.user == cocktail.created_by %}
+                            <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}"
+                                class="btn btn-outline-dark">Edit</a>
+                            <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id) }}"
+                                class="btn btn-outline-dark">Delete</a>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
-                <div class="row ingredients_row">
-                    <div class="col-md-6">
-                        <h4 class="ingredients">Ingredients:</h4><br>
-
-                        {% for ingredients in cocktail.cocktail_ingredients %}
-                            
-                        <p><strong>{{ loop.index }}.</strong> {{ ingredients }}</p>
-                            
-                        {% endfor %}
-                    </div>
-                    <div class="col-md-6">
-                        <p>Added by: {{ cocktail.created_by }}</p>
-                        {% if session.user == cocktail.created_by %}
-                            <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}" class="btn btn-outline-dark">Edit</a>
-                            <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id) }}" class="btn btn-outline-dark">Delete</a>
-                        {% endif %}
-                    </div>
-                </div>
+                <div class="col-md-1"></div>
             </div>
-            <div class="col-md-1">
-            </div>
-        </div>
         </div>
         <hr>
         {% endfor %}

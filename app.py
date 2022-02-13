@@ -108,7 +108,8 @@ def mybar(emailaddress):
     if session["user"]:
         cocktails = mongo.db.cocktails.find()
         return render_template(
-            "mybar.html", emailaddress=emailaddress, cocktails=cocktails, age_title="MY BAR LOG IN")
+            "mybar.html", emailaddress=emailaddress,
+            cocktails=cocktails, age_title="MY BAR LOG IN")
 
     return redirect(url_for("login_mybar"))
 

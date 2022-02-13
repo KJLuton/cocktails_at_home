@@ -43,5 +43,3 @@ $(document).on("click","#remove_btn",function(){
   var remove_element = $(this).data("remove");
   $("#input_"+remove_element).remove();
 });
-
-

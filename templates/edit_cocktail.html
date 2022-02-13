@@ -46,6 +46,11 @@
                         <textarea class="form-control" name="cocktail_ingredients" id="cocktail_ingredients" rows="3"
                             required>{{ cocktail.cocktail_ingredients }}</textarea>
                     </div>
+                    <div class="col-md-12 form-group">
+                        <label for="image_url" class="form-label">Cocktail Image URL: </label>
+                        <textarea class="form-control" name="image_url" id="image_url" rows="1"
+                            required>{{ cocktail.image_url }}</textarea>
+                    </div>
                     <!-- confirm edit button -->
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Confirm Edit Cocktail</button>

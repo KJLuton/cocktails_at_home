@@ -14,12 +14,17 @@
         </form>
     </div>
 </header>
-<div class="container-fluid page-header-bar"></div>
+<div class="page-header-bar"></div>
 
+<div class="featured-block">
+    <div class="col-lg-12">
+    <h3 class="page-header-text">Featured cocktails</h3>
+    </div>
     <div class="row drinks-categories">
 
-        {% for cocktail in cocktails %}
-        <div class="col-md-4">
+        {% for cocktail in cocktails|sort(attribute="cocktail_name") %}
+            {% if loop.index >= 4 %}
+        <div class="col-md-4 feature">
             <div class="card text-white">
                 <img src="{{ cocktail.image_url }}" class="card-img cocktail_image" alt="{{ cocktail.cocktail_name }} image">
                 <div class="card-img-overlay">
@@ -27,8 +32,18 @@
                 </div>
             </div>
         </div>
+            {% endif %}
         {% endfor %}
     </div>
-   
+</div>
+<div class="row featured-block mybar-block">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <a href="{{ url_for('register_mybar') }}"><h2>Create / Sign in to My Bar</h2></a>
+        <h4>Take control over your bar. Create a "My Bar" account today and add, edit and design your own cocktails.</h4>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
 <!-- ./Hero Image container -->
 {% endblock %}

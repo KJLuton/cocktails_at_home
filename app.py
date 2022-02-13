@@ -151,11 +151,13 @@ def edit_cocktail(cocktail_id):
             "cocktail_name": request.form.get("cocktail_name"),
             "cocktail_description": request.form.get("cocktail_description"),
             "cocktail_category": request.form.getlist("cocktail_category"),
-            "cocktail_ingredients": request.form.getlist("cocktail_ingredients"),
+            "cocktail_ingredients":
+                request.form.getlist("cocktail_ingredients"),
             "image_url": request.form.get("image_url"),
             "created_by": session["user"]
         }
-        mongo.db.cocktails.update_many({"_id": ObjectId(cocktail_id)}, {"$set": submit })
+        mongo.db.cocktails.update_many(
+            {"_id": ObjectId(cocktail_id)}, {"$set": submit})
         flash("Cocktail Updated")
 
     cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})

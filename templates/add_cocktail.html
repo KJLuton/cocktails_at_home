@@ -36,13 +36,11 @@
                         </div>
                     </div>
                     <div class="col-md-12 form-group options">
-                        <label for="cocktail_ingredients" class="form-label">Cocktail Ingredients: </label><br>
-                        <input type="text" name="cocktail_ingredients" id="cocktail_ingredients" required><br>
-                        <div class="new-ingredient"></div>
-                        <button class="add-ingredient">Add Another Ingredient</button>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+                        <label for="cocktail_ingredients" class="form-label">Cocktail Ingredients (amount and item eg: 50ml Vodka): </label><br>
+                        <input class="form-control" type="text" name="cocktail_ingredients" id="cocktail_ingredients" placeholder="Add your first ingredient here" required><br>
+                        
+                        <div id="recurssion_container"></div>
+                        <button type="button" id="add_button" data-intial="0">+ Add another ingredient</button>
                     </div>
                     <div class="col-md-12 form-group">
                         <label for="image_url" class="form-label">Cocktail Image URL: </label>

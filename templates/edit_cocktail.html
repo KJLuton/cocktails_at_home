@@ -37,15 +37,14 @@
                         {% for ingredients in cocktail.cocktail_ingredients %}
                         
                         <p class="ingredients-list-form">{{ loop.index }}.</p>
-                        <input type="text" name="cocktail_ingredients" id="cocktail_ingredients" value="{{ ingredients }}" required><br>
+                        <input class="form-control" type="text" name="cocktail_ingredients" id="cocktail_ingredients" value="{{ ingredients }}"><br>
                         {% endfor %}
-                        <div class="new-ingredient"></div>
-                        <button class="add-ingredient">Add Another Ingredient</button>
+
+                        <div id="recurssion_container"></div>
+                        <button type="button" id="add_button" data-intial="0">+ Add another ingredient</button>
                         
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
+
                     <div class="col-md-12 form-group">
                         <label for="image_url" class="form-label">Cocktail Image URL: </label>
                         <textarea class="form-control" name="image_url" id="image_url" rows="1"

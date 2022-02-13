@@ -4,6 +4,10 @@ body {
     height: 100vh;
 }
 
+.row {
+    --bs-gutter-x: 0;
+}
+
 /* Font */
 
 h1 {
@@ -14,7 +18,10 @@ h2 {
     font-size: 2.5rem;
 }
 
-h1, h2, .nav-link, a {
+h1,
+h2,
+.nav-link,
+a {
     font-family: 'Fjalla One', sans-serif;
     color: #f2f2f2;
 }
@@ -36,7 +43,8 @@ h4 {
 h5 {
     font-size: 1.5rem;
     font-family: 'Fjalla One', sans-serif;
-    color: rgb(24, 80, 80);;
+    color: rgb(24, 80, 80);
+    ;
 }
 
 p {
@@ -59,15 +67,16 @@ p {
     font-family: 'Fjalla One', sans-serif;
     color: #f2f2f2;
     font-size: inherit;
+    text-transform: uppercase;
 }
 
-.login-links{
+.login-links {
     color: #40b3b9;
     font-family: 'Shadows Into Light';
     font-weight: 500;
 }
 
-.flashes{
+.flashes {
     text-align: center;
     background-color: #364658;
     color: #f2f2f2;
@@ -110,11 +119,11 @@ p {
     background-size: cover;
 }
 
-.search-bar{
+.search-bar {
     padding-top: 30px;
 }
 
-.search-button{
+.search-button {
     background-color: #40b3b9;
     color: white;
 }
@@ -129,10 +138,15 @@ p {
     height: max-content;
 }
 
+.featured-block {
+    padding-top: 20px;
+    text-align: center;
+}
+
 /* drinks categories and cards */
 
-.drinks-categories{
-    margin: 40px 40px 40px 40px;
+.drinks-categories {
+    margin: 10px;
 }
 
 .card {
@@ -143,29 +157,38 @@ p {
     word-wrap: break-word;
     background-color: #f2f2f2;
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, .125);
     border-radius: 0.25rem;
-    margin-bottom: 20px;
 }
 
-.card-img{
+.feature {
+    padding: 10px;
+}
+
+.card-img {
     width: 100%;
     object-fit: cover;
     height: 30vh;
 }
 
-/* drnks pages */
+.mybar-block {
+    height: 50vh;
+    padding: 20px;
+    background-color: coral;
+}
 
-.page-content{
+/* drinks pages */
+
+.page-content {
     padding: 30px;
 }
 
-.ingredients{
+.ingredients {
     background-color: #00494d;
     padding: 10px;
 }
 
-.cocktail-container{
+.cocktail-container {
     padding-top: 20px;
 }
 
@@ -175,13 +198,13 @@ p {
     max-height: 50vh;
 }
 
-.ingredients_row{
+.ingredients_row {
     background-color: #95d4d7;
     margin-top: 20px;
     padding-top: 10px;
 }
 
-.cocktail_details{
+.cocktail_details {
     background-color: #e5e5e5;
     padding: 20px;
 }
@@ -199,7 +222,7 @@ p {
 
 /* register page */
 
-.card-header{
+.card-header {
     text-align: center;
     background-color: #40b3b9;
 }

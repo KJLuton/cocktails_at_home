@@ -16,7 +16,7 @@
     </div>
 </div>
 
-        {% for cocktail in cocktails %}
+        {% for cocktail in cocktails|sort(attribute="cocktail_name") %}
 
         <div class="cocktail-container container">
             <div class="row">

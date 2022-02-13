@@ -157,7 +157,7 @@ def edit_cocktail(cocktail_id):
             "image_url": request.form.get("image_url"),
             "created_by": session["user"]
         }
-        mongo.db.cocktails.update({"_id": ObjectId(cocktail_id)}, submit)
+        mongo.db.cocktails.update_many({"_id": ObjectId(cocktail_id)}, {"$set": submit })
         flash("Cocktail Updated")
 
     cocktail = mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)})

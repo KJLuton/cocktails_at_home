@@ -31,10 +31,20 @@
                         <textarea class="form-control" name="cocktail_description" id="cocktail_description" rows="3"
                             required>{{- cocktail.cocktail_description -}}</textarea>
                     </div>
-                    <div class="col-md-12 form-group">
-                        <label for="cocktail_ingredients" class="form-label">Cocktail Ingredients: </label>
-                        <textarea class="form-control" name="cocktail_ingredients" id="cocktail_ingredients" rows="3"
-                            required>{{- cocktail.cocktail_ingredients -}}</textarea>
+                    <div class="col-md-12 form-group options">
+                        <label for="cocktail_ingredients" class="form-label">Cocktail Ingredients: </label><br>
+                        <label for="cocktail_ingredients" class="form-label"></label>
+                        {% for ingredients in cocktail.cocktail_ingredients %}
+                        
+                        <p class="ingredients-list-form">{{ loop.index }}.</p>
+                        <input type="text" name="cocktail_ingredients" id="cocktail_ingredients" value="{{ ingredients }}" required><br>
+                        {% endfor %}
+                        <div class="new-ingredient"></div>
+                        <button class="add-ingredient">Add Another Ingredient</button>
+                        
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="col-md-12 form-group">
                         <label for="image_url" class="form-label">Cocktail Image URL: </label>

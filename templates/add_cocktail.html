@@ -15,14 +15,14 @@
                             Looks good!
                         </div>
                     </div>
-                    <div class="col-md-12 form-group">
+                    <div class="col-md-12 form-group options">
                         <label for="cocktail_category" class="form-label">Cocktail Category:</label><br>
-                        <input type="checkbox" name="cocktail_category" id="cocktail_category" value="Gin">Gin<br>
-                        <input type="checkbox" name="cocktail_category" id="cocktail_category" value="Vodka">Vodka<br>
-                        <input type="checkbox" name="cocktail_category" id="cocktail_category" value="Whiskey/Rye">Whiskey/Rye<br>
-                        <input type="checkbox" name="cocktail_category" id="cocktail_category" value="Tequila">Tequila<br>
-                        <input type="checkbox" name="cocktail_category" id="cocktail_category" value="Rum">Rum<br>
-                        <input type="checkbox" name="cocktail_category" id="cocktail_category" value="Brandy">Brandy<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Gin" required />Gin<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Vodka" required />Vodka<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Whiskey/Rye" required />Whiskey/Rye<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Tequila" required />Tequila<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Rum" required />Rum<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Brandy" required />Brandy<br>
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -35,10 +35,11 @@
                             Looks good!
                         </div>
                     </div>
-                    <div class="col-md-12 form-group">
-                        <label for="cocktail_ingredients" class="form-label">Cocktail Ingredients: </label>
-                        <textarea class="form-control" name="cocktail_ingredients" id="cocktail_ingredients" rows="3"
-                            required></textarea>
+                    <div class="col-md-12 form-group options">
+                        <label for="cocktail_ingredients" class="form-label">Cocktail Ingredients: </label><br>
+                        <input type="text" name="cocktail_ingredients" id="cocktail_ingredients" required><br>
+                        <div class="new-ingredient"></div>
+                        <button class="add-ingredient">Add Another Ingredient</button>
                         <div class="valid-feedback">
                             Looks good!
                         </div>

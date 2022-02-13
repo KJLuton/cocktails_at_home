@@ -186,6 +186,16 @@ p {
     padding: 20px;
 }
 
+/* add / edit form */
+
+.ingredients-list-form {
+    display: inline;
+    font-weight: 500;
+}
+
+.add-ingredient {
+    margin-top: 10px;
+}
 
 /* register page */
 

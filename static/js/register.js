@@ -19,6 +19,7 @@
       })
   })()
 
+// Code reference: https://stackoverflow.com/questions/6218494/using-the-html5-required-attribute-for-a-group-of-checkboxes //
 $(function(){
     var requiredCheckboxes = $('.options :checkbox[required]');
     requiredCheckboxes.change(function(){
@@ -28,4 +29,8 @@ $(function(){
             requiredCheckboxes.attr('required', 'required');
         }
     });
+});
+
+$('.add-ingredient').click(function () {
+  $('.new-ingredient').append('<input type="text" name="cocktail_ingredients" id="cocktail_ingredients" required></br>');
 });

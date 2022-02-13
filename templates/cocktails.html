@@ -48,7 +48,7 @@
                         <p><strong>Liquer: </strong>{{ cocktail.cocktail_category }}</p>
                         <p><strong>Strength: </strong> {{ cocktail.cocktail_strength }}</p>
                         <p>Added by: {{ cocktail.created_by }}</p>
-                        {% if session.user %}
+                        {% if session.user == cocktail.created_by %}
                         <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}" class="btn btn-outline-dark">Edit</a>
                         {% endif %}
                     </div>

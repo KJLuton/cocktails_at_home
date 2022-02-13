@@ -278,6 +278,9 @@ Photo by <a href="https://unsplash.com/@alexasoh?utm_source=unsplash&utm_medium=
 Long Island Iced Tea: 
 Photo by <a href="https://unsplash.com/@swivelproject?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Elissa Landry</a> on <a href="https://unsplash.com/s/photos/long-island-iced-tea?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
+Mojito: 
+Photo by <a href="https://unsplash.com/@neatproduction?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrejs Sims</a> on <a href="https://unsplash.com/s/photos/mojito-cocktail?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
   
 
 #### README.md File Assistance

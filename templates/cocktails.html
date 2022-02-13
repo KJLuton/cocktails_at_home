@@ -27,7 +27,16 @@
 
                         <h3>{{ cocktail.cocktail_name }}</h3><br>
                         <p>{{ cocktail.cocktail_description }}</p>
-                        <p><strong>Liquer: </strong>{{ cocktail.cocktail_category }}</p>
+                        <p><strong>Liquer(s) needed: </strong></p>
+
+                        {% for categories in cocktail.cocktail_category %}
+
+                        <ul>
+                            <li>{{ categories }}</li>
+                        </ul>
+                        
+                        {% endfor %}
+
                     </div>
                     <div class="col-md-6">
                         <img src="{{ cocktail.image_url }}" class="cocktail_image"
@@ -39,12 +48,11 @@
                         <h4 class="ingredients">Ingredients:</h4><br>
 
                         {% for ingredients in cocktail.cocktail_ingredients %}
-                        <p><strong>{{ loop.index }}.</strong> {{ ingredients }}</p>
+                        <p><strong>{{ loop.index }}.</strong> {{ ingredients.splitlines() }}</p>
                         
                         {% endfor %}
                     </div>
                     <div class="col-md-6">
-                        <p><strong>Liquer: </strong>{{ cocktail.cocktail_category }}</p>
                         <p>Added by: {{ cocktail.created_by }}</p>
                         {% if session.user == cocktail.created_by %}
                             <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}" class="btn btn-outline-dark">Edit</a>

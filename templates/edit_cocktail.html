@@ -14,31 +14,32 @@
                         <input type="text" class="form-control" name="cocktail_name" id="cocktail_name"
                             value="{{ cocktail.cocktail_name }}" required>
                     </div>
-                    <div class="col-md-12 form-group">
-                        <label for="cocktail_category">Main Cocktail Category: </label>
-                        <select class="form-control" name="cocktail_category" id="cocktail_category" multiple required>
-                            <option value="{{ cocktail.cocktail_category }}" selected>{{ cocktail.cocktail_category }}</option>
-                            <option>Gin</option>
-                            <option>Vodka</option>
-                            <option>Whiskey/Rye</option>
-                            <option>Champagne</option>
-                            <option>Other</option>
-                        </select>
+                    <div class="col-md-12 form-group options">
+                        <label for="cocktail_category" class="form-label">Cocktail Category:</label><br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Gin" required />Gin<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Vodka" required />Vodka<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Whiskey/Rye" required />Whiskey/Rye<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Tequila" required />Tequila<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Rum" required />Rum<br>
+                        <input class="checkboxes" type="checkbox" name="cocktail_category" id="cocktail_category" value="Brandy" required />Brandy<br>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="col-md-12 form-group">
                         <label for="cocktail_description" class="form-label">Cocktail description: </label>
                         <textarea class="form-control" name="cocktail_description" id="cocktail_description" rows="3"
-                            required>{{ cocktail.cocktail_description }}</textarea>
+                            required>{{- cocktail.cocktail_description -}}</textarea>
                     </div>
                     <div class="col-md-12 form-group">
                         <label for="cocktail_ingredients" class="form-label">Cocktail Ingredients: </label>
                         <textarea class="form-control" name="cocktail_ingredients" id="cocktail_ingredients" rows="3"
-                            required>{{ cocktail.cocktail_ingredients }}</textarea>
+                            required>{{- cocktail.cocktail_ingredients -}}</textarea>
                     </div>
                     <div class="col-md-12 form-group">
                         <label for="image_url" class="form-label">Cocktail Image URL: </label>
                         <textarea class="form-control" name="image_url" id="image_url" rows="1"
-                            required>{{ cocktail.image_url }}</textarea>
+                            required>{{- cocktail.image_url -}}</textarea>
                     </div>
                     <!-- confirm edit button -->
                     <div class="col-12">

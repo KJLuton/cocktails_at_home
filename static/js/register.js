@@ -1,4 +1,4 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
   
@@ -18,3 +18,14 @@
         }, false)
       })
   })()
+
+$(function(){
+    var requiredCheckboxes = $('.options :checkbox[required]');
+    requiredCheckboxes.change(function(){
+        if(requiredCheckboxes.is(':checked')) {
+            requiredCheckboxes.removeAttr('required');
+        } else {
+            requiredCheckboxes.attr('required', 'required');
+        }
+    });
+});

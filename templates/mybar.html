@@ -1,34 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container-fluid search-bar">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <form class="form-inline" action="{{ url_for('search') }}" method="POST">
-                <input class="form-control mr-sm-2" type="search" name="search" minlength="3"
-                    placeholder="Search all cocktails" aria-label="Search" validate>
-                <button class="btn search-button my-2 my-sm-0" type="submit">Search</button>
-                <a href="{{ url_for('cocktails') }}" class="btn">Reset</a>
-            </form>
-        </div>
-        <div class="col-md-2"></div>
+<div class="container-fluid pages-header-container">
+    <h2 class="page-header-text">{{ page_title }}</h2>
+</div>
+<div class="row featured-block mybar-block">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <a href="{{ url_for('register_mybar') }}"><h2>Welcome to Your Bar</h2></a>
+        <h4>Get creative and add some cocktails via the button below. Search for some inspirations from other home bartenders.</h4>
     </div>
+    <div class="col-lg-2"></div>
+</div>
+<div class="row featured-block search-bar">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <form class="form-inline" action="{{ url_for('search') }}" method="POST">
+            <input class="form-control mr-sm-2" type="search" name="search" minlength="3"
+                placeholder="Search all cocktails" aria-label="Search" validate>
+            <button class="btn search-button my-2 my-sm-0" type="submit">Search</button>
+            <a href="{{ url_for('cocktails') }}" class="btn">Reset</a>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
 </div>
 
 <div class="container">
-    <div class="row">
-        <button><a href="{{ url_for('add_cocktail') }}" class="btn">Add Cocktail</a></button>
-    </div>
+    <a href="{{ url_for('add_cocktail') }}" class="btn btn-secondary btn-lg btn-block">Add Cocktail</a>
+    <a href="{{ url_for('cocktails') }}" class="btn btn-secondary btn-lg btn-block">All Cocktails</a>
 </div>
 
 <div class="row drinks-categories">
-
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
     {% for cocktail in cocktails %} 
     
         {% if session.user == cocktail.created_by %}
 
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card text-white">
                 <img src="{{ cocktail.image_url }}" class="card-img cocktail_image" alt="{{ cocktail.cocktail_name }} image">
                 <div class="card-img-overlay">
@@ -40,7 +49,8 @@
         {% endif %}
     
     {% endfor %}
-
+    </div>
+    <div class="col-md-2"></div>
 </div>
 
 {% endblock %}

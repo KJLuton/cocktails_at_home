@@ -15,8 +15,7 @@
         <div class="col-md-2"></div>
     </div>
 </div>
-
-        {% for cocktail in cocktails|sort(attribute="cocktail_name") %}
+    {% for cocktail in cocktails %}
 
         <div class="cocktail-container container">
             <div class="row">
@@ -44,7 +43,7 @@
                         </div>
                     </div>
                     <div class="row ingredients_row">
-                        <div class="col-md-6 cocktail-lower">
+                        <div class="col-md-6">
                             <h4 class="ingredients">Ingredients:</h4><br>
 
                             {% for ingredients in cocktail.cocktail_ingredients %}
@@ -53,15 +52,13 @@
 
                             {% endfor %}
                         </div>
-                        <div class="col-md-6 cocktail-lower">
+                        <div class="col-md-6">
                             <p>Added by: {{ cocktail.created_by }}</p>
                             {% if session.user == cocktail.created_by %}
                             <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}"
                                 class="btn btn-outline-dark">Edit</a>
                             <a href="{{ url_for('delete_cocktail', cocktail_id=cocktail._id) }}"
                                 class="btn btn-outline-dark">Delete</a>
-                            {% else %}
-                                <p class="text-muted"><small>You can only edit or delete cocktails that you have created. Only users can edit or delete cocktails.</small></p>
                             {% endif %}
                         </div>
                     </div>
@@ -70,7 +67,7 @@
             </div>
         </div>
         <hr>
-        {% endfor %}
 
+    {% endfor %}
 
 {% endblock %}

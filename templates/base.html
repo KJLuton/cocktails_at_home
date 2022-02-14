@@ -26,27 +26,24 @@
             <div class="flex-row-reverse collapse navbar-collapse" id="navbarNav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link gen-links active" aria-current="page" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('cocktails') }}">All Cocktails</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about') }}">About C&#x40;H</a>
+                        <a class="nav-link gen-links" href="{{ url_for('cocktails') }}">All Cocktails</a>
                     </li>
                     {% if session.user %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('mybar', emailaddress=session['user']) }}">My Bar</a>
+                            <a class="nav-link mybar-links" href="{{ url_for('mybar', emailaddress=session['user']) }}">My Bar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('logout') }}">Log out</a>
+                            <a class="nav-link mybar-links" href="{{ url_for('logout') }}">Log out</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('register_mybar') }}">Create My Bar</a>
+                            <a class="nav-link mybar-links" href="{{ url_for('register_mybar') }}">Create My Bar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('login_mybar') }}">Log in to My Bar</a>
+                            <a class="nav-link mybar-links" href="{{ url_for('login_mybar') }}">Log in to My Bar</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -78,7 +75,7 @@
 
     <footer class="navbar-light bg-light">
         <div class="container-fluid">
-            <p class="copyright text-muted">Copyright &copy; Your Website <span id="copyright"></span></p>
+            <p class="copyright text-muted">Copyright &copy; COCKTAILS&#x40;HOME <span id="copyright"></span></p>
         </div>
     </footer>
 

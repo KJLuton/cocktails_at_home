@@ -71,9 +71,17 @@ p {
 }
 
 .login-links {
-    color: #40b3b9;
+    color: #ff7f50;
     font-family: 'Shadows Into Light';
     font-weight: 500;
+}
+
+.gen-links {
+    color: #364658;
+}
+
+.mybar-links{
+    color: #ff7f50;
 }
 
 .flashes {
@@ -87,7 +95,6 @@ p {
 .nav-link {
     display: block;
     padding: 0.5rem 1rem;
-    color: #1e2424;
     text-decoration: none;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
@@ -171,10 +178,11 @@ p {
     height: 30vh;
 }
 
+/* mybar signin feature */
+
 .mybar-block {
-    height: 50vh;
-    padding: 20px;
-    background-color: coral;
+    padding: 80px;
+    background-color: #ff7f50;
 }
 
 /* drinks pages */
@@ -209,6 +217,10 @@ p {
     padding: 20px;
 }
 
+.cocktail-lower{
+    padding: 20px;
+}
+
 /* add / edit form */
 
 .ingredients-list-form {
@@ -224,7 +236,7 @@ p {
 
 .card-header {
     text-align: center;
-    background-color: #40b3b9;
+    background-color: #ff7f50;
 }
 
 .card-body {

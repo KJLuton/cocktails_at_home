@@ -20,19 +20,15 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
-
-
-@app.route("/about")
-def about():
-    return render_template("about.html", page_title="ABOUT C@H")
+    cocktails = mongo.db.cocktails.find()
+    return render_template("index.html", cocktails=cocktails)
 
 
 @app.route("/cocktails")
 def cocktails():
     cocktails = mongo.db.cocktails.find()
     return render_template(
-        "cocktails.html", cocktails=cocktails, page_title="COCKTAILS")
+        "cocktails.html", cocktails=cocktails, page_title="ALL COCKTAILS")
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -41,6 +37,13 @@ def search():
     cocktails = mongo.db.cocktails.find({"$text": {"$search": search}})
     return render_template(
         "cocktails.html", cocktails=cocktails)
+
+
+@app.route("/cocktails/<cocktail_name>")
+def single_cocktail(cocktail_name):
+    cocktails = mongo.db.cocktails.find()
+    return render_template(
+        "single_cocktail.html", cocktails=cocktails, cocktail_name=cocktail_name)
 
 
 # create new bar / registration

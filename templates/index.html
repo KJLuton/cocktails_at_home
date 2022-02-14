@@ -9,7 +9,7 @@
         <br>
         <form class="form-inline" action="{{ url_for('search') }}" method="POST">
             <input class="form-control mr-sm-2" type="search" name="search" minlength="3"
-                placeholder="What's your poison?" aria-label="Search" validate><br>
+                placeholder="What's your poison? Search a keyword or cocktail name" aria-label="Search" validate><br>
             <button class="btn search-button my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
@@ -24,14 +24,14 @@
 
         {% for cocktail in cocktails|sort(attribute="cocktail_name") %}
             {% if loop.index >= 4 %}
-        <div class="col-md-4 feature">
-            <div class="card text-white">
-                <img src="{{ cocktail.image_url }}" class="card-img cocktail_image" alt="{{ cocktail.cocktail_name }} image">
-                <div class="card-img-overlay">
-                    <a class="liquer-card-title" href="{{ url_for('cocktails') }}">{{ cocktail.cocktail_name }}</a>
+                <div class="col-md-4 feature">
+                    <div class="card text-white">
+                        <img src="{{ cocktail.image_url }}" class="card-img cocktail_image" alt="{{ cocktail.cocktail_name }} image">
+                        <div class="card-img-overlay">
+                            <a class="liquer-card-title" href="{{ url_for('single_cocktail', cocktail_name=cocktail.cocktail_name) }}">{{ cocktail.cocktail_name }}</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
             {% endif %}
         {% endfor %}
     </div>
@@ -40,7 +40,7 @@
     <div class="col-lg-2"></div>
     <div class="col-lg-8">
         <a href="{{ url_for('register_mybar') }}"><h2>Create / Sign in to My Bar</h2></a>
-        <h4>Take control over your bar. Create a "My Bar" account today and add, edit and design your own cocktails.</h4>
+        <h4>Take control over your bar.<br>Create a "My Bar" account today and add, edit and design your own cocktails.</h4>
     </div>
     <div class="col-lg-2"></div>
 </div>

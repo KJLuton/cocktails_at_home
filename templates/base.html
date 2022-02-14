@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!-- Nav Bar -->
+    <!-- nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('index') }}">COCKTAILS&#x40;HOME</a>
@@ -51,14 +51,14 @@
             </div>
         </div>
     </nav>
-    <!-- ./Nav Bar -->
-
+    <!-- ./nav Bar -->
+    <!-- page title container for all pages but index -->
     <div class="container-fluid pages-header-container">
         <h2 class="page-header-text">{{ page_title }}</h2>
     </div>
-
+    <!-- ./ page title container for all pages but index -->
+    <!-- flash messages -->
     <div class="container-fluid">
-        <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -69,6 +69,8 @@
         {% endif %}
         {% endwith %}
     </div>
+    <!-- ./ flash messages -->
+
 
     {% block content %}
     {% endblock %}
@@ -90,11 +92,10 @@
     <!-- Bootstrap core JavaScript -->
 	<script src="{{ url_for('static', filename='js/register.js') }}"></script>
 
-    <!-- ./Need to fix this -->
+    <!-- Footer copyright and date -->
     <script>
         $("#copyright").text(new Date().getFullYear());
     </script>
-    <!-- ./Need to fix this -->
 </body>
 
 </html>

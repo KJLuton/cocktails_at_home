@@ -9,7 +9,7 @@
         <br>
         <form class="form-inline" action="{{ url_for('search') }}" method="POST">
             <input class="form-control mr-sm-2" type="search" name="search" minlength="3"
-                placeholder="What's your poison? Search a keyword or cocktail name" aria-label="Search" validate><br>
+                placeholder="What's your poison? Search a keyword or cocktail name" aria-label="Search"><br>
             <button class="btn search-button my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
@@ -23,7 +23,7 @@
     <div class="row drinks-categories">
 
         {% for cocktail in cocktails|sort(attribute="cocktail_name") %}
-            {% if loop.index >= 4 %}
+            {% if loop.index >= 5 %}
                 <div class="col-md-4 feature">
                     <div class="card text-white">
                         <img src="{{ cocktail.image_url }}" class="card-img cocktail_image" alt="{{ cocktail.cocktail_name }} image">

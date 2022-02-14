@@ -112,7 +112,7 @@ def mybar(emailaddress):
         cocktails = mongo.db.cocktails.find()
         return render_template(
             "mybar.html", emailaddress=emailaddress,
-            cocktails=cocktails, age_title="MY BAR LOG IN")
+            cocktails=cocktails, page_title="MY BAR")
 
     return redirect(url_for("login_mybar"))
 

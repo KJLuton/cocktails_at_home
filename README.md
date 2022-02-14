@@ -76,6 +76,7 @@ The main colours used in this project are:
 
 * #d6d6d6 - grey
 * #40b3b9 - blue
+* #ff7f50 - coral (My Bar/Log In accents)
 * #f2f2f2 - off white
 * Hover links: 
 * H1 Text: 

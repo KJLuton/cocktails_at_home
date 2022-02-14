@@ -42,9 +42,9 @@ def search():
 @app.route("/cocktails/<cocktail_id>")
 def single_cocktail(cocktail_id):
     cocktails = mongo.db.cocktails.find(
-    mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)}))
+        mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)}))
     return render_template(
-    "single_cocktail.html", cocktails=cocktails)
+        "single_cocktail.html", cocktails=cocktails)
 
 
 # create new bar / registration
@@ -150,9 +150,12 @@ def add_cocktail():
         "add_cocktail.html", page_title="ADD A NEW COCKTAIL")
 
 
+# Edit cocktail already in database
 @app.route("/edit_cocktail/<cocktail_id>", methods=["GET", "POST"])
 def edit_cocktail(cocktail_id):
     if request.method == "POST":
+        # Create new varible called 'submit'
+        # which is a dictionary of key/value pairs
         submit = {
             "cocktail_name": request.form.get("cocktail_name"),
             "cocktail_description": request.form.get("cocktail_description"),
@@ -162,7 +165,7 @@ def edit_cocktail(cocktail_id):
             "image_url": request.form.get("image_url"),
             "created_by": session["user"]
         }
-        mongo.db.cocktails.update_many(
+        mongo.db.cocktails.update_one(
             {"_id": ObjectId(cocktail_id)}, {"$set": submit})
         flash("Cocktail Updated")
 

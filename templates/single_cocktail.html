@@ -22,7 +22,7 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10 cocktail_details">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 cocktail-upper">
 
                             <h3>{{ cocktail.cocktail_name }}</h3><br>
                             <p>{{ cocktail.cocktail_description }}</p>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="row ingredients_row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 cocktail-lower">
                             <h4 class="ingredients">Ingredients:</h4><br>
 
                             {% for ingredients in cocktail.cocktail_ingredients %}
@@ -52,7 +52,7 @@
 
                             {% endfor %}
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 cocktail-lower">
                             <p>Added by: {{ cocktail.created_by }}</p>
                             {% if session.user == cocktail.created_by %}
                             <a href="{{ url_for('edit_cocktail', cocktail_id=cocktail._id) }}"

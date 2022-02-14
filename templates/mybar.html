@@ -1,52 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row featured-block mybar-block">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
-        <h4>Get creative and add some cocktails via the button below. Search for some inspirations from other home bartenders.</h4>
-    </div>
-    <div class="col-lg-2"></div>
-</div>
-<div class="row featured-block search-bar">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
-        <form class="form-inline" action="{{ url_for('search') }}" method="POST">
-            <input class="form-control mr-sm-2" type="search" name="search" minlength="3"
-                placeholder="Search all cocktails" aria-label="Search" validate>
-            <button class="btn search-button my-2 my-sm-0" type="submit">Search</button>
-            <a href="{{ url_for('cocktails') }}" class="btn">Reset</a>
-        </form>
-    </div>
-    <div class="col-md-2"></div>
-</div>
-
-<div class="container">
-    <a href="{{ url_for('add_cocktail') }}" class="btn btn-secondary btn-lg btn-block">Add Cocktail</a>
-    <a href="{{ url_for('cocktails') }}" class="btn btn-secondary btn-lg btn-block">All Cocktails</a>
-</div>
-
-<div class="row drinks-categories">
+    <div class="row featured-block mybar-block">
         <div class="col-lg-2"></div>
-        <div class="col-lg-8">
-    {% for cocktail in cocktails %} 
-    
-        {% if session.user == cocktail.created_by %}
+        <div class="col-lg-8  mybar-block">
+            <h4>Get creative and add some cocktails via the button below. Search for some inspirations from other home
+                bartenders.</h4>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="row drinks-categories">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                <h5>Cocktails created by you</h5>
+                
+                    {% for cocktail in cocktails %}
 
-        <div class="col-md-6">
-            <div class="card text-white">
-                <img src="{{ cocktail.image_url }}" class="card-img cocktail_image" alt="{{ cocktail.cocktail_name }} image">
-                <div class="card-img-overlay">
-                    <a class="liquer-card-title" href="{{ url_for('cocktails') }}">{{ cocktail.cocktail_name }}</a>
+                        {% if session.user == cocktail.created_by %}
+                    
+                        <div class="card text-white">
+                            <img src="{{ cocktail.image_url }}" class="card-img cocktail_image"
+                                alt="{{ cocktail.cocktail_name }} image">
+                            <div class="card-img-overlay">
+                                <a class="liquer-card-title"
+                                    href="{{ url_for('single_cocktail', cocktail_id=cocktail._id) }}">{{ cocktail.cocktail_name }}</a>
+                            </div>
+                        </div>
+
+                        {% endif %}
+
+                    {% endfor %}
                 </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
-
-        {% endif %}
-    
-    {% endfor %}
+        <div class="col-md-6">
+            <div class="mybar-side-square">
+                <form class="form-inline" action="/search" method="POST">
+                    <input class="form-control mr-sm-2" type="search" name="search" minlength="3" placeholder="Search all cocktails" aria-label="Search" validate="">
+                    <button class="btn search-button my-2 my-sm-0" type="submit">Search</button>
+                    <a href="/cocktails" class="btn">Reset</a>
+                </form>
+                <br>
+                <a href="/add_cocktail" class="btn btn-primary btn-lg btn-block">Add Cocktail</a>
+            <br>
+            <a href="/cocktails" class="btn btn-secondary btn-lg btn-block">All Cocktails</a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-2"></div>
-</div>
-
 {% endblock %}

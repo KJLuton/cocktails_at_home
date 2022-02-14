@@ -280,6 +280,9 @@ Photo by <a href="https://unsplash.com/@swivelproject?utm_source=unsplash&utm_me
 
 Mojito: 
 Photo by <a href="https://unsplash.com/@neatproduction?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrejs Sims</a> on <a href="https://unsplash.com/s/photos/mojito-cocktail?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Favicon icon: 
+<a href="https://www.flaticon.com/free-icons/cocktail" title="cocktail icons">Cocktail icons created by Freepik - Flaticon</a>
   
 
 #### README.md File Assistance

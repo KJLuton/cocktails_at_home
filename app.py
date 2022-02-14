@@ -41,15 +41,16 @@ def search():
 
 @app.route("/cocktails/<cocktail_id>")
 def single_cocktail(cocktail_id):
+    # open url on selected cocktail
     cocktails = mongo.db.cocktails.find(
         mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)}))
     return render_template(
         "single_cocktail.html", cocktails=cocktails)
 
 
-# create new bar / registration
 @app.route("/register_mybar", methods=["GET", "POST"])
 def register_mybar():
+    # create new account
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(

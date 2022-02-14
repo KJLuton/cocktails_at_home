@@ -1,9 +1,9 @@
 # Cocktails@Home
 ## Backend Development Milestone Project 3
 
-![homepage mock up](assets/images/readme_images/assets/homepage_mockup.png)
+![homepage mock up](./static/images/ms3_responsive_mockup.png)
 
-The [Cocktails@Home](https://cocktails-at-home.herokuapp.com/) website was built by Kirstyn Luton as part of the Backend Development Milestone Project, Milestone 3 Project with Code Institute. The website presents.... the website allows.... 
+The [Cocktails@Home](https://cocktails-at-home.herokuapp.com/) website was built by Kirstyn Luton as part of the Backend Development Milestone Project, Milestone 3 Project with Code Institute. The website presents an online cocktail database, hosted on MongoDB, where users can search for cocktail recipes and create a user account to create, update and delete their own recipes. 
 
 Disclaimer: This website has been built for entertainment and education purposes. It does not represent an actual company. The website is build with HTML and CSS with imported Bootstrap, Flask, MongoDB, Python and Heroku frameworks. The website is responsive for multiple screen types.
 
@@ -36,13 +36,16 @@ Disclaimer: This website has been built for entertainment and education purposes
 
 ## Website owner business goals
 
-The website owner is the company, Cocktails@Home. The goal of the website is to provide users with an online tool to find cocktail receipes that they can use at home. The owner wants Cocktails@Home to be the 'go-to' website when looking for cocktail recepies. 
+The website owner is the company, Cocktails@Home. The goal of the website is to provide users with an online tool to find cocktail receipes that they can use at home. The owner wants Cocktails@Home to be the 'go-to' website when looking for cocktail recepies. By providing the users with the functions to create and update their own recipes, the owner will increase their database collection of recipes.
+
+Future goals for the owner will be to monitise the website and offer sales of alcoholic products to aid users Cocktails@Home experience.
 
 ## User goals
 
-- User is able to find a cocktail receipe based on the name of the cocktail or liquer base of the cocktail
-- User is able to create an account in order to save "favourite" cocktail receipes 
-- Logged in user is able to upload new receipes for others to view
+- General User's are able to find a cocktail receipe based on the name of the cocktail or liquer base of the cocktail.
+- User is able to create an account.
+- Logged in user is able to add and update their own recipes.
+- Logged in user is able to easily see the recipes they have added to the site.
 
 ## User stories
 
@@ -78,12 +81,6 @@ The main colours used in this project are:
 * #40b3b9 - blue
 * #ff7f50 - coral (My Bar/Log In accents)
 * #f2f2f2 - off white
-* Hover links: 
-* H1 Text: 
-* Paragraph text: 
-* Background: 
-
-The link and link hover colours are intentionally duller than the main colours to improve readability whilst standing out from the copy.
 
 ### Fonts
 
@@ -91,7 +88,6 @@ The fonts are installed from [Google Fonts](https://fonts.google.com/):
 
 * h1, h2, h5: 'Fjalla One' with the secondary font as 'sans-serif'
 * h3, h4: 'Shadows Into Light' with the secondary font as 'cursive'
-* p: XXXXXX
 
 ### Images
 
@@ -100,35 +96,39 @@ I used images from [Unsplash.com](https://unsplash.com/). I have credited these 
 [Back to table of contents](#table-of-contents)
 
 _______
-# Features
+# Features and functions
 
 ## Existing Features
 
-### Elements on every page
+### Base template // Elements on every page 
+The base.html template houses the elements that are avaiable on everypage. 
 
 #### Navigation bar 
+The navigation bar aids the user in navigating around the website. Depending on the logged in state of the user, changes the visibility of the naviagtion links. 
 
 #### Footer 
-
-#### Banner Images
+The footed displays the name of the website and current year. 
 
 #### Flash message 
+The flash messages provide feedback to the user based on their form actions. 
 
 ### Homepage
 
 #### Welcome banner and hero image
+This section welcomes the user and provides a search function to allow the user to search for a cocktail easily. 
 
 #### Cocktail sections
+Featured cocktails are displayed on the homepage. The user can click on these cocktails and see the specific recipe.
 
 ## All Cocktails Page 
 
-![All Cocktails page mock up]()
+![All Cocktails page mock up](./static/images/ms3_all_cocktails_mockup.png)
 
 #### 
 
 ## Regsiter / Log In page
 
-![Register and Log in page mockup]()
+![Register and Log in page mockup](./static/images/ms3_create_login_page.png)
 
 *
 * 

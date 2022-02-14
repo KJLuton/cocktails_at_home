@@ -21,7 +21,8 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     cocktails = mongo.db.cocktails.find()
-    return render_template("index.html", cocktails=cocktails)
+    return render_template("index.html", cocktails=cocktails,
+        page_title="COCKTAILS AT HOME")
 
 
 @app.route("/cocktails")

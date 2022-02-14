@@ -75,7 +75,6 @@ User 2: Peter is 40 and wants to have some friends over for a cocktail party. He
 ### Colours
 
 The main colours used in this project are: 
-![colour-pallet]()
 
 * #d6d6d6 - grey
 * #40b3b9 - blue
@@ -125,20 +124,25 @@ Featured cocktails are displayed on the homepage. The user can click on these co
 ![All Cocktails page mock up](./static/images/ms3_all_cocktails_mockup.png)
 
 #### 
+The all cocktails page displays all cocktails in the MongoDb cocktails collection. It also displays a search bar function to allow the user to easily search for a cocktail recipe based on the cocktail name or ingredient. 
 
 ## Regsiter / Log In page
 
 ![Register and Log in page mockup](./static/images/ms3_create_login_page.png)
 
-*
-* 
-* 
+The log in and create a user pages host a form which is connected to the mongoDB database. The form allows the session user to create an account. If an account is created (verified by the email address), then they can log in with their password. 
+
+## My Bar / Logged in user profile page
+
+![My Bar page mockup](./static/images/ms3_mybar.jpg)
+
+The My Bar page is only visible for users who have created an account. The page shows the cocktails which have been created by the logged in user. It also allows the user to add a cocktail of their own. 
 
 ## Future implementations
 
-Further developments I would make to the sites features would be: 
+Further developments I would make to the sites features would be to add a favrouites function whereby a logged in user can add favourite cockatils to their "My Bar" page and see a summary of favourites. 
 
-
+I would also develop a monitise aspect of the website and allow the company to sell products such as "Cocktails@Home" kits to allow users to create their favourite cocktails at home easily. 
 
 [Back to table of contents](#table-of-contents)
 _______
@@ -147,7 +151,7 @@ _______
 
 ## Languages Used
 
-* #### [Python](https://en.wikipedia.org/wiki/Python_(programming_language)
+* #### [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
    Python is an interpreted high-level general-purpose programming language. Python was used to write..... 
 
 * #### [HTML5](https://en.wikipedia.org/wiki/HTML5)
@@ -158,7 +162,7 @@ _______
 
 ## Frameworks, Libraries and Programmes Used
    
-* #### [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)
+* #### [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
    Flask is a micro web framework written in Python.
 
 * #### [MongoDB](https://www.mongodb.com/)
@@ -186,6 +190,7 @@ _______
     Heroku was used to deploy the overall project to ensure the Python languages work preoperly. 
 
 * #### [Cloudinary](https://cloudinary.com/)
+    Cloudinary was used to store the images and produce urls for the Mongo database collect of cocktails.
 
 
 [Back to table of contents](#table-of-contents)
@@ -193,24 +198,24 @@ _______
 
 # Testing
 
-* Write testing feedback here
+* The website testing was a continouse process throughout the project build. I continously tested the functions and pages before every commit to ensure they were working properly. 
 
 ### Functionality Testing
 
-* Write testing feedback here 
+* I tested the functions as I created them to ensure they were working. 
 
 ### User Stories Testing
 
 User 1:
 <i>Katie</i>
 
-* Visiting the website as Katie
+* Visiting the website as Katie showed that the website was easy to use and easy to find new cocktails based on the liquer type. A development might be to include a scale on sweetness / bitterness of cocktails to allow users to search based on their prefernces. 
 
 
 User 2:
 <i>Peter</i>
 
-* Visiting the website as Peter
+* Visiting the website as Peter showed that the site allowed users to find cocktails easily. 
 
 ### Code Validation
 
@@ -222,9 +227,7 @@ User 2:
 
 
 ### Issues Found During Site Development
-* 
-*
-*
+* An issue found during the site development was trying to get the single_cocktail function pulling through with the cocktail name. As the cocktail name can't be gaurenteed as a unique reference, I decided to use the _id to show a single cocktail function.
 
 
 [Back to table of contents](#table-of-contents)
@@ -233,12 +236,19 @@ _______
 
 The project was created within Gitpod and then deployed to Heroku App via the Gitpod terminal. I committed and logged all changes to the project, into Githun using the git command control system. At the end of each session, I used the git push command in the GitPod terminal to push all changes to the GitHub repository. 
 
-To deploy the project I had to:
+To deploy the project I had to type the following into the gitpod terminal:
+* git add -A
+* git commit -m "Insert commit message here"
+* git push origin main 
 
-* 
+This would save and push the changes to the git hub repository. Then, I log into Heroku and go to the following: 
 
-To run locally: 
-* 
+* Heroku.app - deploy
+* Scroll down to "manual deploy"
+* Deploy brand - Main 
+* Click: Deploy Branch
+
+This would deploy the branch to the Heroku App and final link. 
 
 
 [Back to table of contents](#table-of-contents)
@@ -247,7 +257,7 @@ _______
 
 ## Content
 
-The content on the page was from XXXXXX
+The content on the page is from https://www.bbcgoodfood.com/.
 
 ## Media
 
@@ -306,10 +316,9 @@ I also used the following links to support my code writing:
 
 # Acknowledgements
 
-Thank you to my mentor  for her support and guidance during the project development. 
+Thank you to my mentor Antonija (slack:antonija_mentor) for her support and guidance during the project development. 
 <br>
 <br>
-
 Thank you to my family and friends who tested the site and provided valuable feedback. 
 
 [Back to Table of contents](#table-of-contents)

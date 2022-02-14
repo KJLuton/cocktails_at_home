@@ -184,8 +184,7 @@ _______
 * #### [Heroku App](https://www.heroku.com)
     Heroku was used to deploy the overall project to ensure the Python languages work preoperly. 
 
-* #### [Balsamic](https://balsamiq.com/) 
-    The Balsamic programme was used to build and develop the projects [Wireframes](#wireframes).  
+* #### [Cloudinary](https://cloudinary.com/)
 
 
 [Back to table of contents](#table-of-contents)

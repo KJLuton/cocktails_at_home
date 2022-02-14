@@ -28,7 +28,7 @@
                     <div class="card text-white">
                         <img src="{{ cocktail.image_url }}" class="card-img cocktail_image" alt="{{ cocktail.cocktail_name }} image">
                         <div class="card-img-overlay">
-                            <a class="liquer-card-title" href="{{ url_for('single_cocktail', cocktail_name=cocktail.cocktail_name) }}">{{ cocktail.cocktail_name }}</a>
+                            <a class="liquer-card-title" href="{{ url_for('single_cocktail', cocktail_id=cocktail._id) }}">{{ cocktail.cocktail_name }}</a>
                         </div>
                     </div>
                 </div>

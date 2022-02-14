@@ -39,11 +39,12 @@ def search():
         "cocktails.html", cocktails=cocktails)
 
 
-@app.route("/cocktails/<cocktail_name>")
-def single_cocktail(cocktail_name):
-    cocktails = mongo.db.cocktails.find()
+@app.route("/cocktails/<cocktail_id>")
+def single_cocktail(cocktail_id):
+    cocktails = mongo.db.cocktails.find(
+    mongo.db.cocktails.find_one({"_id": ObjectId(cocktail_id)}))
     return render_template(
-        "single_cocktail.html", cocktails=cocktails, cocktail_name=cocktail_name)
+    "single_cocktail.html", cocktails=cocktails)
 
 
 # create new bar / registration
